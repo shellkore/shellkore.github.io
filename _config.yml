@@ -7,7 +7,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   of your mouth seems like a Quote.
 baseurl: ""  # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-#repository: YoussefRaafatNasry/portfolYOU
+repository: YoussefRaafatNasry/portfolYOU
 remote_theme: YoussefRaafatNasry/portfolYOU
 
 # Build settings
