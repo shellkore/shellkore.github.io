@@ -18,13 +18,13 @@ markdown: kramdown
 
 # Author Info
 author:
-  name     : John Doe
-  image    : https://i2.cdn.turner.com/cnnnext/dam/assets/140926165711-john-sutter-profile-image-large-169.jpg
-  email    : username@xyz.com
-  github   : username
-  twitter  : username
-  linkedin : username
-  facebook : username
+  name     : Shailesh Kumar Sahu
+  image    : https://user-images.githubusercontent.com/36515927/57946981-4ae29b00-78fb-11e9-9159-abe920b00be5.jpg
+  email    : shaileshkumar2604@gmail.com 
+  github   : shellkore
+  twitter  : ShellKoreSahu
+  linkedin : shellkore
+  facebook : shellkore
 
 
 # Collections
