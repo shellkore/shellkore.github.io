@@ -11,9 +11,9 @@
   color: dark
 
 - name: JavaScript
-  percentage: 70
-  color: dark
+  percentage: 60
+  color: success
 
 - name: Django/Flask
   percentage: 70
-  color: dark
+  color: danger

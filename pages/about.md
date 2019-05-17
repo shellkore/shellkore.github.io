@@ -8,7 +8,7 @@ weight: 3
 # **About Me**
 
 Hi I am **{{ site.author.name }}**,<br>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+I am about to complete my second year of engineering from Computer branch. I love coding and is pasionate about open source development. I am pretty good in competetive coding. I use Python preferably as my development language. I am currently exploring the world of deep-learning.<br>Apart from my technical life, I am in deep love with <strong>Anime</strong> world. If you are into Anime, ping me anytime on Facebook :)
 
 <div class="row">
 {% include skills.html title="Programming Skills" source=site.data.programming-skills %}
