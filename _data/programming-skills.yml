@@ -6,14 +6,19 @@
   percentage: 80
   color:
 
+- name: Machine Learning Algos
+  percentage: 70
+  color: success
+
 - name: HTML/CSS3
   percentage: 70
   color: dark
 
+- name: Django/Flask
+  percentage: 70
+  color: danger
+  
 - name: JavaScript
   percentage: 60
   color: success
 
-- name: Django/Flask
-  percentage: 70
-  color: danger
