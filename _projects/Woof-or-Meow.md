@@ -13,5 +13,5 @@ description: An binary image classification project made using Keras and hosted 
 * A predict button which on clicking gives the result- woof(for dog) or meow(for cat).
 
 <p class="text-center">
-{% include button.html link="https://github.com/shellkore/woofOrMeow" text="Learn More" %}
+{% include button.html link="https://github.com/shellkore/woofOrMeow" text="View Code" %}
 </p>

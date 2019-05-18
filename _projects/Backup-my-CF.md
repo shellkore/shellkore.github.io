@@ -16,5 +16,5 @@ description: A tool made to backup(save a copy in local disk) all of your succes
 * You can push these codes on your GitHub to show your swag. ;)
 
 <p class="text-center">
-{% include button.html link="https://github.com/shellkore/backup-my-CF" text="Learn More" %}
+{% include button.html link="https://github.com/shellkore/backup-my-CF" text="View Code" %}
 </p>
