@@ -1,6 +1,7 @@
 - name: Adobe Photoshop
   percentage: 50
   color: info
+  
 - name: Libre Office
-  pecentage: 60
+  pecentage: 70
   color: danger

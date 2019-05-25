@@ -13,5 +13,5 @@ Steganography is a technique to hide message in some other form. In Image stegan
 
 The technique used here is LSB Steganography. In this only last 2-3 bits out of 8 bits of each pixel is used for storing message.
 <p class="text-center">
-{% include button.html link="https://github.com/shellkore/image-steganography" text="Learn More" %}
+{% include button.html link="https://github.com/shellkore/image-steganography" text="View Code" %}
 </p>

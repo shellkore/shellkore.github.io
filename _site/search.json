@@ -1,11 +1,27 @@
 [
   
     {
+      "title"    : "Is Linux good for developers?",
+      "category" : "",
+      "tags"     : "Linux, Open-Source, Developers",
+      "url"      : "https://medium.com/@shellkore/is-linux-good-for-developers-c5e99127ecb3",
+      "date"     : "2019-01-26 00:00:00 +0530"
+    } ,
+  
+    {
       "title"    : "Squash commits in git",
       "category" : "",
       "tags"     : "Github, Git",
       "url"      : "https://medium.com/faun/squash-commits-in-git-80294e11218d",
-      "date"     : "2019-05-17 00:00:00 +0530"
+      "date"     : "2019-01-19 00:00:00 +0530"
+    } ,
+  
+    {
+      "title"    : "Why Linux?",
+      "category" : "",
+      "tags"     : "Linux, Open-Source",
+      "url"      : "https://medium.com/@shellkore/why-linux-c37364541f86",
+      "date"     : "2019-01-16 00:00:00 +0530"
     } 
   
 ]

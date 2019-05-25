@@ -13,3 +13,7 @@ description: An automation tool to check your library book's due date,automatica
 * can be run from terminal from anywhere
 
 * username and password have to be entered at first run only
+
+<p class="text-center">
+{% include button.html link="https://github.com/shellkore/Library-Automation" text="View Code" %}
+</p>
