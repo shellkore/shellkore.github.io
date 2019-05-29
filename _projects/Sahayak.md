@@ -20,5 +20,5 @@ description: An android application to assist visually challenged and new people
 	* It works good everywhere,from remote locations to big crowded cities.
 
 ## Achievements
-	* won first prize at National Eureka Hackathon out of 65 total teams.
+	* Won first prize at National Eureka Hackathon out of 65 total teams.
 	* Winner at the Pascathon - national level hackathon organized by PICT Pune.
