@@ -9,10 +9,19 @@
                Flank In-Charge (Hostel).
 
 - title: Python Developer Intern, Oniria Creations
-  from: 26 april 2019
-  to: 26 may 2019
+  from: april 2019
+  to: may 2019
   description: I worked as a python developer for Oniria Creations. 
-               It was a one month internship. My role was to work on web scrapping, automation projects and NLP.
+               My role was to work on web scrapping, automation projects and NLP.
                It improved my understanding of web,python script writing and core concepts of NLP.
+
+- title: SDE intern, LEAD School
+  from: dec 2019
+  to: jan 2020
+  description: LEAD school is an edutech company. 
+               I was hired as SDE intern.
+               My project was to build a full stack web app called PrISM (promotional interface for School Management).
+               The tech stack I worked on were Flask, Jquery etc. I also used deep learning models for automatic caption generation.
+               various other features like quote scrapper, frame generation etc. were there.
 
 
