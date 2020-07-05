@@ -8,6 +8,8 @@ description: Full of secrets? Really want someone to tell. Well humans may betra
 
 # Hide-my-secret
 
+Full of secrets? Really want someone to tell. Well humans may betray but our algorithm does not.
+
 ## Features
 
 * Hides your secret message inside image or audio
@@ -17,4 +19,5 @@ description: Full of secrets? Really want someone to tell. Well humans may betra
 
 <p class="text-center">
 {% include button.html link="mailto:mail.hidemysecret@gmail.com?subject=Contact us mail from website" text="Contact Us" %}
+mail id : mail.hidemysecret.com
 </p>
