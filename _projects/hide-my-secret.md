@@ -19,5 +19,5 @@ Full of secrets? Really want someone to tell. Well humans may betray but our alg
 
 <p class="text-center">
 {% include button.html link="mailto:mail.hidemysecret@gmail.com?subject=Contact us mail from website" text="Contact Us" %}
-mail id : mail.hidemysecret.com
+mail id : <a href="mail.hidemysecret@gmail.com">mail.hidemysecret@gmail.com</a>	
 </p>
