@@ -1,24 +1,24 @@
 - name: C/C++
-  # percentage: 80
+  percentage: 60
   color: danger
 
 - name: Python
-  # percentage: 80
+  percentage: 70
   color:
 
 - name: ML Algos
-  # percentage: 70
+  percentage: 50
   color: success
 
 - name: HTML/CSS3
-  # percentage: 70
+  percentage: 50
   color: dark
 
-- name: Django/Flask
-  # percentage: 70
+- name: Django & Flask
+  percentage: 70
   color: danger
   
 - name: JavaScript
-  # percentage: 70
+  percentage: 40
   color: success
 

@@ -25,11 +25,17 @@
                various other features like quote scrapper, frame generation etc. were there.
 
 - title: SDE intern, Innovaccer
-  from: dec 2019
-  to: jan 2020
+  from: april 2020
+  to: may 2020
   description: Innovaccer is a US healthcare company. 
                I was hired as SDE intern.
                I created a Telemedicine app on MS Teams. My role was to work on Django framework. I worked on creating the backend APIs.
                Along with writing a production level code on Django, I also worked on setting up basic nodeJs app that would be hosted on MS-Teams.
-               
+
+- title: RPA Developer intern, UBS
+  from: june 2020
+  to: july 2020
+  description: UBS is a switzerland based wealth Management and fintech company. 
+               I was hired as software intern. My role was to build service line bots using RPA tool Automation Anywhere.
+               I worked on metabot creation and MS Graph APIs to make a bot which handles outlook inside the company.
 

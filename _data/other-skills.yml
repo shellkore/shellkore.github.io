@@ -1,7 +1,6 @@
-- name: Adobe Photoshop
-  # percentage: 50
-  color: info
-  
 - name: Libre Office
   # percentage: 70
   color: danger
+
+- name: Financial Education
+  color: success
