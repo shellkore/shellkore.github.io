@@ -1,10 +1,5 @@
-<footer class="mt-auto py-3 text-center">
-
-  <small class="text-muted mb-2">
-    <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
-    by <strong>{{ site.author.name }}</strong>
-  </small>
-
-  {% include social.html %}
-
+<footer class="site-footer mt-auto">
+  <div class="footer-inner"><div><span class="footer-kicker">LET'S CONNECT</span><p>Have an idea? <a href="mailto:{{ site.author.email }}">Say hello ↗</a></p></div>
+    <div class="footer-social"><a href="https://github.com/{{ site.author.github }}">GitHub ↗</a><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn ↗</a><a href="https://twitter.com/{{ site.author.twitter }}">Twitter ↗</a><a href="https://www.facebook.com/{{ site.author.facebook }}">Facebook ↗</a></div>
+    <small>Built with care by {{ site.author.name }}</small></div>
 </footer>

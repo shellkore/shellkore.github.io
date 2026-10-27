@@ -1,7 +1,7 @@
 ---
 name: Backup-my-CF
 tools: [Python,MechanicalSoup,Requests]
-image: https://user-images.githubusercontent.com/36515927/57969218-50d78b00-7992-11e9-994b-f125c96f17a7.png
+image: /assets/images/backup-my-cf.webp
 description: A tool made to backup(save a copy in local disk) all of your succesfully submitted codes on codeforces :)
 ---
 

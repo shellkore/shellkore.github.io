@@ -1,7 +1,7 @@
 ---
 name: Image Steganography
 tools: [Python, openCV, Steganography]
-image: https://user-images.githubusercontent.com/36515927/57970178-eaf00100-799b-11e9-8b5f-0524c475734a.jpeg
+image: /assets/images/image-steganography.webp
 description: This a python implementation of image stegnography with use of minimum external libraries.
 ---
 # image-stegnography

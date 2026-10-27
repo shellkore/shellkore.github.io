@@ -1,7 +1,7 @@
 ---
 name: FTM
 tools: [JavaScript,Cordova,Flask]
-image: https://user-images.githubusercontent.com/36515927/61770790-bcfbc280-ae0b-11e9-9c1b-ad0501707a59.png
+image: /assets/images/ftm.webp
 description: An android an web application to demonstarte futuristic ATMs.
 ---
 

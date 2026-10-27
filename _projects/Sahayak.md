@@ -1,7 +1,7 @@
 ---
 name: Sahayak
 tools: [JavaScript,Android,Cordova]
-image: https://user-images.githubusercontent.com/36515927/58557796-e699d280-823c-11e9-8bd6-78ab4d4d725e.jpg
+image: /assets/images/sahayak.webp
 description: An android application to assist visually challenged and new people in city travel in public transport.
 ---
 

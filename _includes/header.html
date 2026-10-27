@@ -1,15 +1,26 @@
-<div class="row justify-content-center align-items-center p-4">
-  <div class="col-lg-4 col-md-6 text-center mt-4">
-
-    <!-- Fine Circle Responsive Image -->
-    <div id="container" class="my-2">
-      <div id="dummy"></div>
-      <div id="element">
-        <img src="{{ site.author.image }}" alt="{{ site.title }}" class="circle-image wow animated zoomIn" data-wow-delay=".1s">
-      </div>
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="status-dot"></span> Developer / Open source enthusiast</p>
+    <p class="hero-intro">Hello, I'm</p>
+    <h1>Shailesh<br><span>Kumar Sahu.</span></h1>
+    <p class="hero-description">{{ site.description }}</p>
+    <div class="hero-actions">
+      <a class="button-primary" href="{{ '/projects/' | relative_url }}">Explore my work <span aria-hidden="true">↗</span></a>
+      <a class="button-secondary" href="{{ '/about/' | relative_url }}">More about me <span aria-hidden="true">→</span></a>
     </div>
-
-    <p class="text-muted wow animated slideInUp" data-wow-delay=".15s">{{ site.description }}</p>
-
+    <div class="hero-meta"><span>PYTHON</span><span>WEB DEVELOPMENT</span><span>OPEN SOURCE</span></div>
   </div>
+  <div class="hero-visual">
+    <div class="portrait-frame">
+      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+      <img src="{{ site.author.image | relative_url }}" alt="{{ site.title }}" width="600" height="600" fetchpriority="high">
+      <div class="portrait-label"><span>01 / PROFILE</span><strong>Always building<span>.</span></strong></div>
+    </div>
+    <div class="visual-caption"><span>PORTFOLIO / 001</span><span>IDEAS INTO REALITY ↗</span></div>
+  </div>
+</section>
+<div class="home-links" aria-label="Explore the site">
+  <a href="{{ '/projects/' | relative_url }}"><span>01 / SELECTED WORK</span><strong>Projects</strong><b aria-hidden="true">↗</b></a>
+  <a href="{{ '/articles/' | relative_url }}"><span>02 / NOTES & IDEAS</span><strong>Articles</strong><b aria-hidden="true">↗</b></a>
+  <a href="{{ '/about/' | relative_url }}"><span>03 / THE PERSON</span><strong>About me</strong><b aria-hidden="true">↗</b></a>
 </div>

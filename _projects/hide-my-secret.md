@@ -1,7 +1,7 @@
 ---
 name: hide-my-secret
 tools: [Python,opencv,NLP]
-image: https://user-images.githubusercontent.com/36515927/86527363-cf0b2f80-bebb-11ea-97f9-82118494539b.jpg
+image: /assets/images/hide-my-secret.webp
 
 description: Full of secrets? Really want someone to tell. Well humans may betray but our algorithm doesn't. Check it out!!
 ---

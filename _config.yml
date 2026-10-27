@@ -19,7 +19,7 @@ markdown: kramdown
 # Author Info
 author:
   name     : Shailesh Kumar Sahu
-  image    : https://user-images.githubusercontent.com/36515927/57946981-4ae29b00-78fb-11e9-9159-abe920b00be5.jpg
+  image    : /assets/images/portrait.webp
   email    : shaileshkumar2604@gmail.com 
   github   : shellkore
   twitter  : ShellKoreSahu

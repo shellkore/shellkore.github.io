@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-dark" aria-label="Main navigation">
 
-  <a class="navbar-brand" href="{{ site.baseurl }}/"><h5><b>{{ site.title }}</b></h5></a>
+  <a class="navbar-brand" href="{{ '/' | relative_url }}"><span class="brand-mark">S<span>.</span></span><span class="brand-name">SHAIL<span>ESH</span><small>PERSONAL PORTFOLIO</small></span></a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -11,7 +11,7 @@
       {% assign pages = site.html_pages | sort: 'weight' %}
       {% for site_page in pages %}
         {% if site_page.title %}
-          <a class="nav-item nav-link {% if page.url contains site_page.permalink %} active {% endif %}" href="{% if site_page.external_url %} {{ site_page.external_url }} {% else %} {{ site_page.permalink | relative_url }} {% endif %}">{{ site_page.title }}</a>
+          <a class="nav-item nav-link {% if page.url == site_page.permalink %}active{% endif %}" href="{% if site_page.external_url %}{{ site_page.external_url }}{% else %}{{ site_page.permalink | relative_url }}{% endif %}">{{ site_page.title }}</a>
         {% endif %}
       {% endfor %}
     </div>
