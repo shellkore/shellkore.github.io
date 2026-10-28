@@ -1,0 +1,18 @@
+---
+layout: default
+title: Achievements
+permalink: /achievements/
+weight: 4
+---
+
+<header class="page-heading"><p class="eyebrow">04 / MILESTONES</p><h1>Moments worth <span>celebrating.</span></h1><p>A collection of recognition and hackathon milestones along the way.</p></header>
+<div class="achievement-grid">
+  {% for achievement in site.data.achievements %}
+  <article class="achievement-card" style="--achievement-index: {{ forloop.index0 }}">
+    <div class="achievement-top"><span class="achievement-icon" aria-hidden="true">✦</span><span>{{ achievement.date }}</span></div>
+    <p class="achievement-type">{{ achievement.type }}</p>
+    <h2>{{ achievement.title }}</h2>
+    {% if achievement.prize %}<p class="achievement-prize">{{ achievement.prize }} prize</p>{% endif %}
+  </article>
+  {% endfor %}
+</div>
