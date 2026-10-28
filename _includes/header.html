@@ -1,26 +1,30 @@
 <section class="hero">
   <div class="hero-copy">
-    <p class="eyebrow"><span class="status-dot"></span> Developer / Open source enthusiast</p>
+    <p class="eyebrow tech-only"><span class="status-dot"></span> Developer / Open source enthusiast</p>
+    <p class="eyebrow hobby-only"><span class="status-dot"></span> Life beyond the screen</p>
     <p class="hero-intro">Hello, I'm</p>
     <h1>Shailesh<br><span>Kumar Sahu.</span></h1>
     <p class="hero-description">{{ site.description }}</p>
     <div class="hero-actions">
-      <a class="button-primary" href="{{ '/projects/' | relative_url }}">Explore my work <span aria-hidden="true">↗</span></a>
+      <a class="button-primary tech-only" href="{{ '/projects/' | relative_url }}">Explore my work <span aria-hidden="true">↗</span></a>
+      <a class="button-primary hobby-only" href="{{ '/travel/' | relative_url }}">Explore travel <span aria-hidden="true">↗</span></a>
       <a class="button-secondary" href="{{ '/about/' | relative_url }}">More about me <span aria-hidden="true">→</span></a>
     </div>
-    <div class="hero-meta"><span>PYTHON</span><span>WEB DEVELOPMENT</span><span>OPEN SOURCE</span></div>
+    <div class="hero-meta tech-only"><span>PYTHON</span><span>WEB DEVELOPMENT</span><span>OPEN SOURCE</span></div>
+    <div class="hero-meta hobby-only"><span>TRAVEL</span><span>INTERESTS</span><span>STORIES</span></div>
   </div>
   <div class="hero-visual">
     <div class="portrait-frame">
       <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
       <img src="{{ site.author.image | relative_url }}" alt="{{ site.title }}" width="600" height="600" fetchpriority="high">
-      <div class="portrait-label"><span>01 / PROFILE</span><strong>Always building<span>.</span></strong></div>
+      <div class="portrait-label"><span>01 / PROFILE</span><strong class="tech-only">Always building<span>.</span></strong><strong class="hobby-only">Beyond the screen<span>.</span></strong></div>
     </div>
-    <div class="visual-caption"><span>PORTFOLIO / 001</span><span>IDEAS INTO REALITY ↗</span></div>
+    <div class="visual-caption"><span>PORTFOLIO / 001</span><span class="tech-only">IDEAS INTO REALITY ↗</span><span class="hobby-only">LIFE & DISCOVERY ↗</span></div>
   </div>
 </section>
 <div class="home-links" aria-label="Explore the site">
-  <a href="{{ '/projects/' | relative_url }}"><span>01 / SELECTED WORK</span><strong>Projects</strong><b aria-hidden="true">↗</b></a>
+  <a class="tech-only" href="{{ '/projects/' | relative_url }}"><span>01 / SELECTED WORK</span><strong>Projects</strong><b aria-hidden="true">↗</b></a>
+  <a class="hobby-only" href="{{ '/travel/' | relative_url }}"><span>01 / PLACES & STORIES</span><strong>Travel</strong><b aria-hidden="true">↗</b></a>
   <a href="{{ '/articles/' | relative_url }}"><span>02 / NOTES & IDEAS</span><strong>Articles</strong><b aria-hidden="true">↗</b></a>
   <a href="{{ '/about/' | relative_url }}"><span>03 / THE PERSON</span><strong>About me</strong><b aria-hidden="true">↗</b></a>
 </div>

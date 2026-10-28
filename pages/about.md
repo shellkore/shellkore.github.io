@@ -5,6 +5,8 @@ permalink: /about/
 weight: 3
 ---
 
+<div class="tech-only" markdown="1">
+
 # **About Me**
 
 Hi I am **{{ site.author.name }}**,<br>
@@ -24,3 +26,12 @@ I am about to complete my second year of engineering from Computer branch. I lov
 <div class="row">
 {% include timeline.html %}
 </div>
+</div>
+
+<section class="hobby-only hobby-about">
+  <p class="eyebrow">BEYOND THE SCREEN</p>
+  <h1>About me<span>.</span></h1>
+  <p>A space for the interests, experiences, and stories that make up life beyond work.</p>
+  <div class="hobby-placeholder"><span aria-hidden="true">✦</span><div><h2>More to come</h2><p>Personal interests and stories will find their home here.</p></div></div>
+  <a class="button-secondary" href="{{ '/travel/' | relative_url }}">Explore travel <span aria-hidden="true">→</span></a>
+</section>
