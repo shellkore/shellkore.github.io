@@ -1,7 +1,8 @@
 <div class="col mt-4">
+  <div class="timeline-heading"><p class="eyebrow">EXPERIENCE & EDUCATION</p><h2>My journey<span>.</span></h2></div>
   <div class="timeline-body">
     {% for item in site.data.timeline %}
-      <div class="timeline-item">
+      <div class="timeline-item" style="--timeline-index: {{ forloop.index0 }}">
         <div class="content">
           <h2>{{ item.title }}</h2>
           <h6 class="date">{{ item.from }} — {{ item.to }}</h6>
