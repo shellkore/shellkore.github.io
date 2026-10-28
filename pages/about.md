@@ -9,8 +9,9 @@ weight: 3
 
 # **About Me**
 
-Hi I am **{{ site.author.name }}**,<br>
-I am about to complete my second year of engineering from Computer branch. I love coding and is pasionate about open source development. I am pretty good in <strong>competetive coding</strong>. I use <strong>Python</strong> preferably as my development language. I am very much comfortable around Web-development world. I am currently exploring the world of <strong>deep-learning</strong>.<br>Apart from my technical life, I am in deep love with <strong>Anime</strong> world. If you are into Anime, ping me anytime on Facebook :)
+I'm **{{ site.author.name }}**, a software engineer who enjoys turning complex problems into reliable, useful products. At Allica, I build banking applications and microservices with Kotlin and Spring Boot. Previously at Deutsche Bank, I worked on graph-based document workflows and cloud processing solutions that handled over five million documents.
+
+My experience spans backend and frontend development, cloud platforms, and automation, with tools including Python, Java, React, Azure, and Google Cloud. From building business banking products to earning recognition for innovation, I bring curiosity and a practical approach to creating software that makes a difference.
 
 <p class="text-center">
 {% include button.html link="/assets/Shailesh-Resume-04oct26.pdf" text="Download my CV" %}
