@@ -28,7 +28,7 @@
 
     {% include projects/project-card.html %}
 
-    <script>get_tools("{{ project_id }}")</script>
+    <script>get_tools({{ project_id | jsonify }}, {{ site.github.owner_name | default: site.author.github | jsonify }})</script>
 
   {% endfor %}
 

@@ -3,9 +3,12 @@
     {% for skill in include.source %}
       <div class="skill">
         <p>{{ skill.name }}</p>
-        <div class="skill-bar skill-bar-{{ skill.color }} skill-{{ skill.percentage }} wow animated slideInLeft" data-wow-delay="{{ forloop.index | divided_by: 20.0 }}">
-          <span>{{ skill.percentage }}%</span>
+        {% if skill.percentage %}
+        <div class="skill-track" role="progressbar" aria-label="{{ skill.name }}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ skill.percentage }}">
+          <div class="skill-fill" style="width: {{ skill.percentage }}%"></div>
         </div>
+        <span class="skill-value">{{ skill.percentage }}%</span>
+        {% endif %}
       </div>
     {% endfor %}
 </div>
