@@ -15,7 +15,9 @@ I am about to complete my second year of engineering from Computer branch. I lov
 </p>
 
 <div class="row">
-{% include skills.html title="Programming Skills" source=site.data.programming-skills %}
+{% include skills.html title="Programming Skills" source=site.data.programming-skills variant="cards" %}
+</div>
+<div class="row">
 {% include skills.html title="Other Skills" source=site.data.other-skills %}
 </div>
 

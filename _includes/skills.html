@@ -1,7 +1,9 @@
 <div class="col-lg">
   <h2 class="mb-3">{{ include.title }}</h2>
+    {% if include.variant == 'cards' %}<div class="skill-grid">{% endif %}
     {% for skill in include.source %}
-      <div class="skill">
+      <div class="skill{% if include.variant == 'cards' %} skill-card{% endif %}"{% if include.variant == 'cards' %} tabindex="0"{% endif %}>
+        {% if include.variant == 'cards' %}<div class="skill-card-top"><span class="skill-icon" aria-hidden="true">✦</span><span class="skill-index">{{ forloop.index | prepend: '0' | slice: -2, 2 }} / SKILL</span></div>{% endif %}
         <p>{{ skill.name }}</p>
         {% if skill.percentage %}
         <div class="skill-track" role="progressbar" aria-label="{{ skill.name }}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ skill.percentage }}">
@@ -11,4 +13,5 @@
         {% endif %}
       </div>
     {% endfor %}
+    {% if include.variant == 'cards' %}</div>{% endif %}
 </div>
