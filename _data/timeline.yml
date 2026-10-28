@@ -3,20 +3,22 @@
   to: Present
   description: Build online banking and back-office applications, and deliver business account products across microservices using Kotlin and Spring Boot. Contributed to the Flutter mobile experience.
 
-- title: Associate (SDE), Deutsche Bank
-  from: Mar 2024
-  to: Dec 2024
-  description: Built graph-based document workflows with Spring Boot and React Flow, making complex pipelines easier to create and process.
-
-- title: Senior Analyst (SDE), Deutsche Bank
-  from: Oct 2022
-  to: Mar 2024
-  description: Integrated Google Cloud services for document processing, helping process over five million documents and earning the India Excellence and DB Recognition awards.
-
-- title: Analyst (SDE), Deutsche Bank
+- title: Deutsche Bank
   from: Jul 2021
-  to: Sep 2022
-  description: Worked on document extraction and processing with OpenCV, React, Spring Boot and FastAPI.
+  to: Dec 2024
+  roles:
+    - title: Associate (SDE)
+      from: Mar 2024
+      to: Dec 2024
+      description: Built graph-based document workflows with Spring Boot and React Flow, making complex pipelines easier to create and process.
+    - title: Senior Analyst (SDE)
+      from: Oct 2022
+      to: Mar 2024
+      description: Integrated Google Cloud services for document processing, helping process over five million documents and earning the India Excellence and DB Recognition awards.
+    - title: Analyst (SDE)
+      from: Jul 2021
+      to: Sep 2022
+      description: Worked on document extraction and processing with OpenCV, React, Spring Boot and FastAPI.
 
 - title: Computer Engineering, Army Institute of Technology
   from: Jul 2017
@@ -37,8 +39,3 @@
   from: Dec 2019
   to: Jan 2020
   description: Built a school-focused social media publishing interface using Flask, HTML, CSS and jQuery.
-
-- title: Python Developer Intern, Oniria Creations
-  from: Apr 2019
-  to: May 2019
-  description: Worked on web scraping, automation and natural language processing projects in Python.

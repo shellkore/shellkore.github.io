@@ -3,11 +3,29 @@
   <div class="timeline-body">
     {% for item in site.data.timeline %}
       <div class="timeline-item" style="--timeline-index: {{ forloop.index0 }}">
+        {% if item.roles %}
+        <details class="content timeline-group">
+          <summary>
+            <span><span class="timeline-group-title">{{ item.title }}</span><span class="date">{{ item.from }} — {{ item.to }}</span></span>
+            <span class="timeline-expand"><span class="timeline-open-label">View roles</span><span class="timeline-close-label">Hide roles</span><span class="timeline-chevron" aria-hidden="true">↓</span></span>
+          </summary>
+          <div class="timeline-roles">
+            {% for role in item.roles %}
+            <div class="timeline-role">
+              <h3>{{ role.title }}</h3>
+              <p class="date">{{ role.from }} — {{ role.to }}</p>
+              <p>{{ role.description }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </details>
+        {% else %}
         <div class="content">
           <h2>{{ item.title }}</h2>
           <h6 class="date">{{ item.from }} — {{ item.to }}</h6>
           <p>{{ item.description }}</p>
         </div>
+        {% endif %}
       </div>
     {% endfor %}
   </div>
