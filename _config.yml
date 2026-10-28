@@ -32,10 +32,18 @@ collections:
   projects:
     output: true
     permalink: /projects/:name
+  hobby_posts:
+    output: true
+    permalink: /blog/:name
 
 
 # Default values for collections
 defaults:
+  - scope:
+      path: ""
+      type: "hobby_posts"
+    values:
+      layout: "page"
   - scope:
       path: ""
       type: "projects"

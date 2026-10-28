@@ -5,6 +5,9 @@ permalink: /articles/
 weight: 2
 ---
 
-<header class="page-heading"><p class="eyebrow tech-only">02 / NOTES & IDEAS</p><p class="eyebrow hobby-only">02 / THE BLOG</p><h1>Thoughts in <span>progress.</span></h1><p>Notes on code, learning, and the things I find along the way.</p></header>
-{% include search.html %}
-{% include articles.html %}
+<div class="tech-only">
+  <header class="page-heading"><p class="eyebrow">02 / NOTES & IDEAS</p><h1>Thoughts in <span>progress.</span></h1><p>Notes on code, learning, and the things I find along the way.</p></header>
+  {% include search.html %}
+  {% include articles.html %}
+</div>
+<div class="hobby-only"><header class="page-heading"><p class="eyebrow">HOBBY MODE</p><h1>Looking for the <span>blog?</span></h1><p>Explore stories from beyond the screen.</p><a class="button-primary" href="{{ '/blog/' | relative_url }}">Go to blog <span aria-hidden="true">→</span></a></header></div>

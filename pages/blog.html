@@ -1,0 +1,20 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+weight: 2
+---
+<div class="hobby-only">
+  <header class="page-heading"><p class="eyebrow">02 / NOTES & STORIES</p><h1>Stories beyond <span>the screen.</span></h1><p>A space for personal stories and reflections.</p></header>
+  {% if site.hobby_posts.size > 0 %}
+  <div class="card-group mt-2">
+    {% assign hobby_posts = site.hobby_posts | sort: 'date' | reverse %}
+    {% for post in hobby_posts %}
+    <div class="col-lg-6 my-3"><a href="{{ post.url | relative_url }}" class="article card"><div class="card-body"><h2 class="card-title">{{ post.title }}</h2>{% if post.description %}<p class="card-text">{{ post.description }}</p>{% endif %}</div>{% if post.date %}<div class="card-footer">{{ post.date | date_to_long_string }}</div>{% endif %}</a></div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="hobby-placeholder"><span aria-hidden="true">✦</span><div><h2>Stories to come</h2><p>Personal posts will be added here.</p></div></div>
+  {% endif %}
+</div>
+<div class="tech-only"><header class="page-heading"><p class="eyebrow">TECH MODE</p><h1>Looking for <span>articles?</span></h1><p>Explore notes on code and learning.</p><a class="button-primary" href="{{ '/articles/' | relative_url }}">Go to articles <span aria-hidden="true">→</span></a></header></div>

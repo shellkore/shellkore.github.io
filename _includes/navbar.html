@@ -17,7 +17,7 @@
       {% assign pages = site.html_pages | sort: 'weight' %}
       {% for site_page in pages %}
         {% if site_page.title %}
-          <a class="nav-item nav-link {% if site_page.permalink == '/projects/' or site_page.permalink == '/achievements/' %}tech-only{% elsif site_page.permalink == '/travel/' %}hobby-only{% endif %} {% if page.url == site_page.permalink %}active{% endif %}" href="{% if site_page.external_url %}{{ site_page.external_url }}{% else %}{{ site_page.permalink | relative_url }}{% endif %}">{% if site_page.permalink == '/articles/' %}<span class="tech-only">Articles</span><span class="hobby-only">Blog</span>{% else %}{{ site_page.title }}{% endif %}</a>
+          <a class="nav-item nav-link {% if site_page.permalink == '/projects/' or site_page.permalink == '/achievements/' or site_page.permalink == '/articles/' %}tech-only{% elsif site_page.permalink == '/travel/' or site_page.permalink == '/blog/' %}hobby-only{% endif %} {% if page.url == site_page.permalink %}active{% endif %}" href="{% if site_page.external_url %}{{ site_page.external_url }}{% else %}{{ site_page.permalink | relative_url }}{% endif %}">{{ site_page.title }}</a>
         {% endif %}
       {% endfor %}
     </div>
