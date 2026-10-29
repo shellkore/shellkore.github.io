@@ -20,3 +20,5 @@
 - { name: Austria, code: AT, lat: 47.5, lng: 14.6 }
 - { name: Indonesia, code: ID, lat: -7.5, lng: 110.0 }
 - { name: India, code: IN, lat: 22.5, lng: 79.0 }
+- { name: Philippines, code: PH, lat: 12.9, lng: 122.0 }
+- { name: South Korea, code: KR, lat: 36.4, lng: 127.9 }
