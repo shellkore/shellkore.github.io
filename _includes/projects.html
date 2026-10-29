@@ -1,7 +1,20 @@
 <!-- Remote Projects JS -->
 <script src="{{ '/assets/js/remote-projects.js' | relative_url }}"></script>
 
-<div class="card-columns m-3 mt-5">
+<div class="card-columns projects-grid m-3 mt-5">
+
+  {% for project in site.data.featured-projects %}
+    {% assign project_type = 'featured' %}
+    {% assign project_id = project.name | slugify %}
+    {% assign project_img = false %}
+    {% assign project_name = project.name %}
+    {% assign project_desc = project.description %}
+    {% assign project_tools = project.tools %}
+    {% assign project_url = project.url %}
+    {% assign project_label = project.label %}
+    {% assign project_symbol = project.symbol %}
+    {% include project-card.html %}
+  {% endfor %}
 
   <!-- Remote Projects -->
   {% for remote_project in page.remote_projects %}
@@ -25,6 +38,7 @@
     {% assign project_name = titlecase %}
     {% assign project_desc = project.description %}
     {% assign project_url = project.html_url %}
+    {% assign project_tools = nil %}
 
     {% include project-card.html %}
 

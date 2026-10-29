@@ -1,0 +1,30 @@
+- name: ToolBarKit
+  url: https://www.toolbarkit.com/
+  label: EVERYDAY UTILITIES
+  symbol: ✦
+  description: A collection of online tools for writing, images, PDFs, finance, and everyday tasks.
+  tools: [Web tools, Utilities]
+- name: LostInStories
+  url: https://lostin.toolbarkit.com/
+  label: AUDIO TRAVEL GUIDES
+  symbol: ◉
+  description: Explore destinations at your own pace with audio stories and walking guides in English and Hindi.
+  tools: [Travel, Audio guides]
+- name: Sensor-based Mobile UI
+  url: https://github.com/shellkore/sensor-based-mobile-ui
+  label: INTERACTIVE EXPERIMENTS
+  symbol: ⌁
+  description: A collection of mobile interfaces that respond to light, movement, sound, and orientation.
+  tools: [Open source, Sensors]
+- name: EarthWalk
+  url: https://earthwalk.toolbarkit.com/
+  label: WALKING ADVENTURE
+  symbol: ◎
+  description: A walking game that turns everyday steps into progress, gear, and encounters with aliens.
+  tools: [Mobile app, Game]
+- name: RepLock
+  url: https://lastlight.toolbarkit.com/replock/
+  label: MOVE FIRST
+  symbol: ↗
+  description: A screen-time companion that turns movement and exercise into earned breaks from distracting apps.
+  tools: [Mobile app, Wellbeing]

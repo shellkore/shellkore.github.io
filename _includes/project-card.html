@@ -1,6 +1,8 @@
 <div class="wow animated fadeIn" data-wow-delay=".15s">
   <a href="{{ project_url }}" class="project card text-dark">
-    {% if project_img %}
+    {% if project_type == 'featured' %}
+    <div class="featured-art featured-{{ project_id }}" aria-hidden="true"><span class="featured-symbol">{{ project_symbol }}</span><span class="featured-label">{{ project_label }}</span><span class="featured-arrow">↗</span></div>
+    {% elsif project_img %}
     <img id="{{ project_id }}-img" class="card-img-top" src="{{ project_img | relative_url }}" alt="{{ project_name }}" loading="lazy" />
     {% endif %}
     <div class="card-body">
