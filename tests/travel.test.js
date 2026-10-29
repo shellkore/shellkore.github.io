@@ -5,74 +5,53 @@ const vm = require('node:vm');
 
 const source = fs.readFileSync('assets/js/travel.js', 'utf8');
 
-function setup(theme, hasMap = true, hasClusters = false) {
+function setup() {
   const cards = [
     { dataset: { country: 'Vietnam', lat: '16', lng: '107.8' } },
     { dataset: { country: 'Austria', lat: '47.5', lng: '14.6' } }
   ];
   cards.forEach(card => { card.addEventListener = (_, handler) => { card.click = handler; }; });
-  const title = {};
-  const dialog = { showModal() { this.opened = true; } };
-  const mapElement = { querySelector: () => ({ remove() {} }) };
+  const title = {}, description = {};
+  const dialog = { open: false, showModal() { this.open = true; } };
+  const choices = { children: [], replaceChildren() { this.children = []; }, appendChild(button) { this.children.push(button); } };
   const document = {
-    documentElement: { dataset: { theme } },
+    documentElement: { dataset: { theme: 'light' } },
     querySelectorAll: () => cards,
-    querySelector: selector => ({ '.country-dialog': dialog, '#country-dialog-title': title, '#travel-map': mapElement })[selector]
+    querySelector: selector => ({ '.country-dialog': dialog, '#country-dialog-title': title, '#country-dialog-description': description, '.country-dialog-choices': choices, '#travel-globe': {} })[selector],
+    createElement: () => ({ addEventListener(_, handler) { this.click = handler; } })
   };
-  const markers = [];
-  const map = { fitBounds(bounds) { this.bounds = bounds; }, addLayer(layer) { this.layer = layer; }, invalidateSize() { this.resized = true; } };
-  const L = {
-    map: () => map,
-    tileLayer: () => ({ addTo() {} }),
-    divIcon: () => ({}),
-    marker: (position, options) => {
-      const marker = { position, options, addTo() { if (this.onAdd) this.onAdd(); return this; }, getElement: () => ({ setAttribute() {} }), bindTooltip() {}, on(event, handler) { if (event === 'add') this.onAdd = handler; else this.click = handler; return this; } };
-      markers.push(marker);
-      return marker;
-    }
-  };
-  if (hasClusters) L.markerClusterGroup = () => ({});
-  let onThemeChange;
-  class MutationObserver { constructor(handler) { onThemeChange = handler; } observe() {} }
-  const context = { document, MutationObserver };
-  if (hasMap) context.L = L;
-  vm.runInNewContext(source, context);
-  return { cards, markers, title, dialog, document, map, onThemeChange };
+  class MutationObserver { observe() {} }
+  const context = vm.createContext({ document, MutationObserver, window: {} });
+  vm.runInContext(source, context);
+  return { cards, title, description, dialog, choices, context };
 }
 
-test('cards and map pins open the same country dialog', () => {
-  const state = setup('light');
-  assert.equal(state.markers.length, 2);
-  assert.equal(state.map.bounds.length, 2);
+test('country cards still open when globe libraries are unavailable', () => {
+  const state = setup();
   state.cards[0].click();
   assert.equal(state.title.textContent, 'Vietnam');
-  assert.equal(state.dialog.opened, true);
-  state.markers[1].click();
-  assert.equal(state.title.textContent, 'Austria');
+  assert.match(state.description.textContent, /Adding more data soon/);
+  assert.equal(state.dialog.open, true);
 });
 
-test('initializes the map when switching to Hobby mode and resizes it on return', () => {
-  const state = setup('dark');
-  assert.equal(state.markers.length, 0);
-  state.document.documentElement.dataset.theme = 'light';
-  state.onThemeChange();
-  assert.equal(state.markers.length, 2);
-  state.onThemeChange();
-  assert.equal(state.markers.length, 2);
-  assert.equal(state.map.resized, true);
+test('nearby projected countries are grouped without losing distant pins', () => {
+  const state = setup();
+  const groups = state.context.groupPins([
+    { x: 100, y: 100, country: { name: 'Austria' } },
+    { x: 105, y: 103, country: { name: 'Slovenia' } },
+    { x: 200, y: 200, country: { name: 'Vietnam' } }
+  ]);
+  assert.equal(groups.length, 2);
+  assert.equal(groups[0].countries.length, 2);
+  assert.equal(groups[1].countries[0].name, 'Vietnam');
 });
 
-test('country cards still work if the map library is unavailable', () => {
-  const state = setup('light', false);
-  state.cards[0].click();
-  assert.equal(state.title.textContent, 'Vietnam');
-  assert.equal(state.dialog.opened, true);
-});
-
-test('uses a cluster layer when the grouping plugin is available', () => {
-  const state = setup('light', true, true);
-  assert.equal(state.markers.length, 2);
-  assert.ok(state.map.layer);
-  state.markers[0].click();
-  assert.equal(state.title.textContent, 'Vietnam');
+test('a grouped pin lets visitors choose a country', () => {
+  const state = setup();
+  state.context.openGroup({ countries: [{ name: 'Austria' }, { name: 'Slovenia' }] });
+  assert.equal(state.title.textContent, 'Choose a country');
+  assert.equal(state.choices.children.length, 2);
+  state.choices.children[1].click();
+  assert.equal(state.title.textContent, 'Slovenia');
+  assert.equal(state.choices.children.length, 0);
 });
