@@ -5,7 +5,32 @@ permalink: /travel/
 weight: 1
 ---
 <div class="hobby-only">
-  <header class="page-heading"><p class="eyebrow">01 / PLACES & STORIES</p><h1>The world, <span>one journey at a time.</span></h1><p>A space for places, experiences, and stories from the road.</p></header>
-  <div class="hobby-placeholder"><span aria-hidden="true">✦</span><div><h2>Journeys to come</h2><p>Travel stories and memories will be added here.</p></div></div>
+  <header class="page-heading"><p class="eyebrow">01 / PLACES & STORIES</p><h1>The world, <span>one journey at a time.</span></h1><p>A collection of places I've explored, with more stories to come.</p></header>
+  <section class="travel-map-section" aria-labelledby="travel-map-heading">
+    <div class="travel-section-heading"><div><p class="eyebrow">THE TRAVEL MAP</p><h2 id="travel-map-heading">Places I've been<span>.</span></h2></div><p>Pins mark countries, not specific stops. Select a number to zoom into nearby countries.</p></div>
+    <div id="travel-map" role="region" aria-label="Map of countries visited"><p class="travel-map-fallback">The map needs an internet connection. You can explore the countries below.</p></div>
+    <noscript><p>Enable JavaScript to explore the map and country cards.</p></noscript>
+  </section>
+  <section class="travel-countries" aria-labelledby="travel-countries-heading">
+    <div class="travel-section-heading"><div><p class="eyebrow">THE COLLECTION / {{ site.data.travel.size }} COUNTRIES</p><h2 id="travel-countries-heading">A world of stories<span>.</span></h2></div><p>Pick a country to begin exploring.</p></div>
+    <div class="country-grid">
+      {% for country in site.data.travel %}
+      <button class="country-card" type="button" data-country="{{ country.name | escape }}" data-lat="{{ country.lat }}" data-lng="{{ country.lng }}" aria-haspopup="dialog">
+        <span class="country-art" aria-hidden="true"><svg viewBox="0 0 300 160" preserveAspectRatio="xMidYMid slice"><circle cx="228" cy="45" r="20" fill="#f7d2a2"/><path d="M0 115 Q55 75 105 110 T200 104 T300 95 V160 H0Z" fill="#bac9b9"/><path d="M0 137 Q70 94 135 133 T300 120 V160 H0Z" fill="#819e99"/><path d="M72 160 Q120 120 164 126 T260 160" fill="none" stroke="#f9ead5" stroke-width="5" stroke-dasharray="8 7"/><path d="M54 42l23 8-23 8 6-8z" fill="#fff9ee"/></svg><span class="country-code">{{ country.code }}</span></span>
+        <span class="country-card-copy"><span class="country-kicker">VISITED / {{ forloop.index | prepend: '0' | slice: -2, 2 }}</span><span class="country-name">{{ country.name }}</span><span class="country-action">Explore <span aria-hidden="true">↗</span></span></span>
+      </button>
+      {% endfor %}
+    </div>
+  </section>
+  <dialog class="country-dialog" aria-labelledby="country-dialog-title" aria-describedby="country-dialog-description">
+    <form method="dialog"><button class="country-dialog-close" aria-label="Close country details" autofocus>×</button></form>
+    <p class="eyebrow">A STORY IN THE MAKING</p><h2 id="country-dialog-title"></h2><p id="country-dialog-description">Adding more data soon. City guides, photos, and stories will be here.</p>
+  </dialog>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="{{ '/assets/css/travel.css' | relative_url }}">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <script src="{{ '/assets/js/travel.js' | relative_url }}"></script>
 </div>
 <div class="tech-only"><header class="page-heading"><p class="eyebrow">TECH MODE</p><h1>Looking for <span>projects?</span></h1><p>Explore the work and experiments section.</p><a class="button-primary" href="{{ '/projects/' | relative_url }}">Go to projects <span aria-hidden="true">→</span></a></header></div>

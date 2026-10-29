@@ -1,0 +1,20 @@
+- { name: Vietnam, code: VN, lat: 16.0, lng: 107.8 }
+- { name: Thailand, code: TH, lat: 15.2, lng: 101.0 }
+- { name: Malaysia, code: MY, lat: 4.2, lng: 102.5 }
+- { name: Laos, code: LA, lat: 19.8, lng: 102.5 }
+- { name: Cambodia, code: KH, lat: 12.7, lng: 104.9 }
+- { name: Sri Lanka, code: LK, lat: 7.8, lng: 80.7 }
+- { name: Nepal, code: NP, lat: 28.4, lng: 84.1 }
+- { name: Egypt, code: EG, lat: 26.8, lng: 30.8 }
+- { name: UAE, code: AE, lat: 24.4, lng: 54.5 }
+- { name: China, code: CN, lat: 35.9, lng: 104.2 }
+- { name: Mongolia, code: MN, lat: 46.9, lng: 103.8 }
+- { name: Russia, code: RU, lat: 61.5, lng: 95.0 }
+- { name: Netherlands, code: NL, lat: 52.1, lng: 5.3 }
+- { name: Germany, code: DE, lat: 51.2, lng: 10.5 }
+- { name: Czech Republic, code: CZ, lat: 49.8, lng: 15.5 }
+- { name: Croatia, code: HR, lat: 45.1, lng: 15.2 }
+- { name: Slovakia, code: SK, lat: 48.7, lng: 19.7 }
+- { name: Slovenia, code: SI, lat: 46.2, lng: 14.9 }
+- { name: Hungary, code: HU, lat: 47.2, lng: 19.5 }
+- { name: Austria, code: AT, lat: 47.5, lng: 14.6 }
