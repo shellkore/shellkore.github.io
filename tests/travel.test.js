@@ -55,3 +55,10 @@ test('a grouped pin lets visitors choose a country', () => {
   assert.equal(state.title.textContent, 'Slovenia');
   assert.equal(state.choices.children.length, 0);
 });
+
+test('zoom remains within the globe limits', () => {
+  const { context } = setup();
+  assert.equal(context.zoomScale(222, .5), 222);
+  assert.equal(context.zoomScale(222, 2), 444);
+  assert.equal(context.zoomScale(1776, 2), 1776);
+});

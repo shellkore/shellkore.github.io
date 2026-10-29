@@ -43,6 +43,10 @@ function groupPins(points) {
   return groups;
 }
 
+function zoomScale(scale, factor) {
+  return Math.max(222, Math.min(1776, scale * factor));
+}
+
 countryCards.forEach(card => card.addEventListener('click', () => openCountry(card.dataset.country)));
 
 function showTravelGlobe() {
@@ -66,13 +70,13 @@ function showTravelGlobe() {
     const points = countries.filter(country => d3.geoDistance([country.lng, country.lat], center) < Math.PI / 2).map(country => {
       const [x, y] = projection([country.lng, country.lat]);
       return { x, y, country };
-    });
+    }).filter(point => point.x >= 0 && point.x <= 500 && point.y >= 0 && point.y <= 500);
     const pins = pinLayer.selectAll('g.globe-pin').data(groupPins(points)).join('g')
       .attr('class', 'globe-pin').attr('transform', group => `translate(${group.x},${group.y})`)
-      .attr('role', 'button').attr('tabindex', '0').attr('aria-haspopup', 'dialog')
-      .attr('aria-label', group => group.countries.length === 1 ? `Explore ${group.countries[0].name}` : `Choose from ${group.countries.length} nearby countries`)
-      .on('click', (_, group) => openGroup(group))
-      .on('keydown', (event, group) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openGroup(group); } });
+      .attr('role', 'button').attr('tabindex', '0').attr('aria-haspopup', group => group.countries.length === 1 || projection.scale() === 1776 ? 'dialog' : null)
+      .attr('aria-label', group => group.countries.length === 1 ? `Explore ${group.countries[0].name}` : `${projection.scale() === 1776 ? 'Choose from' : 'Zoom in on'} ${group.countries.length} nearby countries`)
+      .on('click', (_, group) => selectPin(group))
+      .on('keydown', (event, group) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); selectPin(group); } });
     pins.selectAll('*').remove();
     pins.append('circle').attr('class', 'globe-pin-halo').attr('r', group => group.countries.length > 1 ? 15 : 11);
     pins.append('circle').attr('class', 'globe-pin-core').attr('r', group => group.countries.length > 1 ? 10 : 5);
@@ -86,9 +90,25 @@ function showTravelGlobe() {
     render();
   }
 
-  svg.call(d3.drag().filter(event => !event.ctrlKey && !event.button && !event.target.closest('.globe-pin')).on('drag', event => rotate(event.dx * .4, event.dy * .4)));
+  function zoom(factor) {
+    projection.scale(zoomScale(projection.scale(), factor));
+    render();
+  }
+
+  function selectPin(group) {
+    if (group.countries.length === 1 || projection.scale() === 1776) { openGroup(group); return; }
+    const center = d3.geoCentroid({ type: 'MultiPoint', coordinates: group.countries.map(country => [country.lng, country.lat]) });
+    projection.rotate([-center[0], -center[1], 0]);
+    zoom(2);
+    document.querySelector('#globe-zoom-in').focus();
+  }
+
+  svg.call(d3.drag().filter(event => !event.ctrlKey && !event.button && !event.target.closest('.globe-pin')).on('drag', event => rotate(event.dx * .4 * 222 / projection.scale(), event.dy * .4 * 222 / projection.scale())));
   document.querySelector('#globe-left').addEventListener('click', () => rotate(-25));
   document.querySelector('#globe-right').addEventListener('click', () => rotate(25));
+  document.querySelector('#globe-zoom-in').addEventListener('click', () => zoom(2));
+  document.querySelector('#globe-zoom-out').addEventListener('click', () => zoom(.5));
+  globeElement.addEventListener('wheel', event => { event.preventDefault(); zoom(event.deltaY < 0 ? 1.2 : 1 / 1.2); }, { passive: false });
   render();
 }
 
