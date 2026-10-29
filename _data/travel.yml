@@ -18,3 +18,5 @@
 - { name: Slovenia, code: SI, lat: 46.2, lng: 14.9 }
 - { name: Hungary, code: HU, lat: 47.2, lng: 19.5 }
 - { name: Austria, code: AT, lat: 47.5, lng: 14.6 }
+- { name: Indonesia, code: ID, lat: -7.5, lng: 110.0 }
+- { name: India, code: IN, lat: 22.5, lng: 79.0 }
