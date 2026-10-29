@@ -20,7 +20,7 @@ function setup(theme, hasMap = true, hasClusters = false) {
     querySelector: selector => ({ '.country-dialog': dialog, '#country-dialog-title': title, '#travel-map': mapElement })[selector]
   };
   const markers = [];
-  const map = { setView() { return this; }, addLayer(layer) { this.layer = layer; }, invalidateSize() { this.resized = true; } };
+  const map = { fitBounds(bounds) { this.bounds = bounds; }, addLayer(layer) { this.layer = layer; }, invalidateSize() { this.resized = true; } };
   const L = {
     map: () => map,
     tileLayer: () => ({ addTo() {} }),
@@ -43,6 +43,7 @@ function setup(theme, hasMap = true, hasClusters = false) {
 test('cards and map pins open the same country dialog', () => {
   const state = setup('light');
   assert.equal(state.markers.length, 2);
+  assert.equal(state.map.bounds.length, 2);
   state.cards[0].click();
   assert.equal(state.title.textContent, 'Vietnam');
   assert.equal(state.dialog.opened, true);

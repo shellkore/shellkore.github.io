@@ -8,7 +8,15 @@ weight: 1
   <header class="page-heading"><p class="eyebrow">01 / PLACES & STORIES</p><h1>The world, <span>one journey at a time.</span></h1><p>A collection of places I've explored, with more stories to come.</p></header>
   <section class="travel-map-section" aria-labelledby="travel-map-heading">
     <div class="travel-section-heading"><div><p class="eyebrow">THE TRAVEL MAP</p><h2 id="travel-map-heading">Places I've been<span>.</span></h2></div><p>Pins mark countries, not specific stops. Select a number to zoom into nearby countries.</p></div>
-    <div id="travel-map" role="region" aria-label="Map of countries visited"><p class="travel-map-fallback">The map needs an internet connection. You can explore the countries below.</p></div>
+    <div class="travel-map-frame">
+      <div class="map-frame-top"><div><span class="map-frame-kicker">PERSONAL TRAVEL ATLAS</span><strong>Every pin, a story.</strong></div><span class="map-count"><span aria-hidden="true">✦</span> {{ site.data.travel.size }} countries</span></div>
+      <div class="travel-map-canvas">
+        <div id="travel-map" role="region" aria-label="Map of countries visited"><p class="travel-map-fallback">The map needs an internet connection. You can explore the countries below.</p></div>
+        <div class="map-compass" aria-hidden="true"><span>N</span><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20"/><path d="M24 8l6 16-6 16-6-16z"/><path d="M24 8v32M8 24h32"/></svg></div>
+        <span class="map-explore-hint" aria-hidden="true">DRAG TO EXPLORE <span>↗</span></span>
+      </div>
+      <div class="map-frame-bottom"><span><i></i> PLACES EXPLORED</span><span>SELECT A PIN TO BEGIN <b>↗</b></span></div>
+    </div>
     <noscript><p>Enable JavaScript to explore the map and country cards.</p></noscript>
   </section>
   <section class="travel-countries" aria-labelledby="travel-countries-heading">
@@ -28,9 +36,9 @@ weight: 1
   </dialog>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
-  <link rel="stylesheet" href="{{ '/assets/css/travel.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/travel.css' | relative_url }}?v=2">
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-  <script src="{{ '/assets/js/travel.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/travel.js' | relative_url }}?v=2"></script>
 </div>
 <div class="tech-only"><header class="page-heading"><p class="eyebrow">TECH MODE</p><h1>Looking for <span>projects?</span></h1><p>Explore the work and experiments section.</p><a class="button-primary" href="{{ '/projects/' | relative_url }}">Go to projects <span aria-hidden="true">→</span></a></header></div>

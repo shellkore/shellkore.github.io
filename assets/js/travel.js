@@ -15,7 +15,8 @@ function showTravelMap() {
   if (!mapElement || document.documentElement.dataset.theme !== 'light' || typeof L === 'undefined') return;
   if (travelMap) { travelMap.invalidateSize(); return; }
   mapElement.querySelector('.travel-map-fallback')?.remove();
-  travelMap = L.map(mapElement, { scrollWheelZoom: false, worldCopyJump: true }).setView([28, 55], 2);
+  travelMap = L.map(mapElement, { scrollWheelZoom: false, worldCopyJump: true });
+  travelMap.fitBounds(Array.from(countryCards, card => [Number(card.dataset.lat), Number(card.dataset.lng)]), { padding: [28, 28], maxZoom: 2 });
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
