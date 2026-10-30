@@ -32,7 +32,10 @@ test('switches from Tech to Hobby and redirects the projects page', () => {
 
 test('switches from Hobby to Tech and redirects the travel page', () => {
   const state = setup('light', '/travel');
+  assert.equal(state.button['aria-label'], 'Switch to Tech mode');
+  assert.equal(state.label.textContent, 'Tech');
   state.button.click();
+  assert.equal(state.label.textContent, 'Hobby');
   assert.equal(state.localStorage.theme, 'dark');
   assert.equal(state.location.redirected, '/projects/');
 });
