@@ -47,6 +47,26 @@ function zoomScale(scale, factor) {
   return Math.max(222, Math.min(1776, scale * factor));
 }
 
+function enablePinchZoom(element, zoom) {
+  let distance = 0;
+  let pinching = false;
+  function update(event) {
+    if (event.touches.length >= 2) {
+      event.preventDefault();
+      pinching = true;
+      const [first, second] = event.touches;
+      const next = Math.hypot(first.clientX - second.clientX, first.clientY - second.clientY);
+      if (distance && next) zoom(next / distance);
+      distance = next;
+    } else {
+      distance = 0;
+      if (!event.touches.length) pinching = false;
+    }
+  }
+  ['touchstart', 'touchmove', 'touchend', 'touchcancel'].forEach(type => element.addEventListener(type, update, { capture: true, passive: false }));
+  return () => pinching;
+}
+
 countryCards.forEach(card => card.addEventListener('click', () => openCountry(card.dataset.country)));
 
 function showTravelGlobe() {
@@ -103,7 +123,10 @@ function showTravelGlobe() {
     document.querySelector('#globe-zoom-in').focus();
   }
 
-  svg.call(d3.drag().filter(event => !event.ctrlKey && !event.button && !event.target.closest('.globe-pin')).on('drag', event => rotate(event.dx * .4 * 222 / projection.scale(), event.dy * .4 * 222 / projection.scale())));
+  const isPinching = enablePinchZoom(globeElement, zoom);
+  svg.call(d3.drag().filter(event => !event.ctrlKey && !event.button && !isPinching() && !event.target.closest('.globe-pin')).on('drag', event => {
+    if (!isPinching()) rotate(event.dx * .4 * 222 / projection.scale(), event.dy * .4 * 222 / projection.scale());
+  }));
   document.querySelector('#globe-left').addEventListener('click', () => rotate(-25));
   document.querySelector('#globe-right').addEventListener('click', () => rotate(25));
   document.querySelector('#globe-zoom-in').addEventListener('click', () => zoom(2));

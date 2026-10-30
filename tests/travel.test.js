@@ -62,3 +62,22 @@ test('zoom remains within the globe limits', () => {
   assert.equal(context.zoomScale(222, 2), 444);
   assert.equal(context.zoomScale(1776, 2), 1776);
 });
+
+test('pinching zooms in and out and suspends dragging until both fingers lift', () => {
+  const { context } = setup();
+  const handlers = {}, factors = [];
+  const isPinching = context.enablePinchZoom({ addEventListener(type, handler) { handlers[type] = handler; } }, factor => factors.push(factor));
+  const touch = x => ({ clientX: x, clientY: 0 });
+  const send = (type, touches) => handlers[type]({ touches, preventDefault() {} });
+  send('touchstart', [touch(0)]);
+  send('touchstart', [touch(0), touch(100)]);
+  send('touchmove', [touch(0), touch(150)]);
+  send('touchmove', [touch(0), touch(75)]);
+  assert.deepEqual(factors, [1.5, .5]);
+  send('touchend', [touch(0)]);
+  assert.equal(isPinching(), true);
+  send('touchend', []);
+  assert.equal(isPinching(), false);
+  send('touchstart', [touch(0), touch(50)]);
+  assert.equal(factors.length, 2);
+});

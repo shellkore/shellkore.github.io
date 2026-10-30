@@ -10,7 +10,7 @@ weight: 1
     <div class="travel-section-heading"><div><p class="eyebrow">THE TRAVEL MAP</p><h2 id="travel-map-heading">A world in motion<span>.</span></h2></div><p>Country pins are approximate. Drag to rotate, and select a numbered pin to zoom in.</p></div>
     <div class="travel-globe-panel">
       <div class="globe-copy"><p class="eyebrow">YOUR WORLD</p><strong>{{ site.data.travel.size }}</strong><span>countries explored</span><div class="globe-divider"></div><p>Every journey has a place. Select a pin to discover more.</p><div class="globe-controls" aria-label="Globe controls"><button type="button" id="globe-left" aria-label="Rotate globe left">←</button><button type="button" id="globe-right" aria-label="Rotate globe right">→</button><button type="button" id="globe-zoom-in" aria-label="Zoom in">+</button><button type="button" id="globe-zoom-out" aria-label="Zoom out">−</button></div></div>
-      <div class="globe-visual"><svg id="travel-globe" viewBox="0 0 500 500" role="group" aria-label="Rotatable globe showing visited countries"></svg><p class="globe-fallback">The globe needs an internet connection. You can explore the countries below.</p><p class="globe-hint" aria-hidden="true">DRAG TO ROTATE · SCROLL TO ZOOM</p></div>
+      <div class="globe-visual"><svg id="travel-globe" viewBox="0 0 500 500" role="group" aria-label="Rotatable globe showing visited countries"></svg><p class="globe-fallback">The globe needs an internet connection. You can explore the countries below.</p><p class="globe-hint" aria-hidden="true">DRAG TO ROTATE · PINCH OR SCROLL TO ZOOM</p></div>
     </div>
     <noscript><p>Enable JavaScript to explore the map and country cards.</p></noscript>
   </section>
@@ -34,6 +34,6 @@ weight: 1
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
   <script src="{{ '/assets/js/world-atlas.js' | relative_url }}"></script>
-  <script src="{{ '/assets/js/travel.js' | relative_url }}?v=4"></script>
+  <script src="{{ '/assets/js/travel.js' | relative_url }}?v=5"></script>
 </div>
 <div class="tech-only"><header class="page-heading"><p class="eyebrow">TECH MODE</p><h1>Looking for <span>projects?</span></h1><p>Explore the work and experiments section.</p><a class="button-primary" href="{{ '/projects/' | relative_url }}">Go to projects <span aria-hidden="true">→</span></a></header></div>
